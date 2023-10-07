@@ -7,9 +7,12 @@
 
 int main(void)
 {
-for (int ch = '0'; ch <= '9'; ch++)
+int ch;
+int c;
+
+for (ch = '0'; ch <= '9'; ch++)
 {
-for (int c = ch; c <= '9'; c++)
+for (c = ch; c <= '9'; c++)
 {
 if (ch != c)
 {
@@ -19,17 +22,13 @@ putchar(c);
 if (ch != '8' || c != '9')
 {
 putchar(',');
-
 putchar(' ');
 }
 }
 }
 }
 
-
-
 putchar('\n');
-
 
 return (0);
 }
