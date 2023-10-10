@@ -16,6 +16,7 @@ putchar('h');
 putchar('a');
 putchar('r');
 putchar(' ');
+fprintf(stderr, "error message\n");
 
 return (0);
 }
