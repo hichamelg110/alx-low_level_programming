@@ -16,7 +16,6 @@ putchar('h');
 putchar('a');
 putchar('r');
 putchar('\n');
-fprintf(stderr)
 
 return (0);
 }
