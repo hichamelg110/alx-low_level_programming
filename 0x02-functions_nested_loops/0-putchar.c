@@ -15,8 +15,8 @@ putchar('c');
 putchar('h');
 putchar('a');
 putchar('r');
-putchar(' ');
-fprintf(stderr, "error message\n");
+putchar('\n');
+fprintf(stderr)
 
 return (0);
 }
