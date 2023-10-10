@@ -6,7 +6,7 @@
  *
  * Return: 0
  */
- 
+
 int _abs(int n)
 {
 
