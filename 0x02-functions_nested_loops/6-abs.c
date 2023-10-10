@@ -1,22 +1,17 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "main.h"
 /**
- * main - a program that prints _putchar
- * followed by a new line.
- * Return: 0.
+ * _abs - a function that computes the
+ * absolute value of an integer.
+ * @n: the integer we will computes
+ *
+ * Return: 0
  */
-
-void main(){
-    
-for (int i = 'a'; i <= 'z'; i++)
-
-{ 
-putchar(i);
-}
-putchar('\n');
-if (islower(c))
-return (1);
  
+int _abs(int n)
+{
+
+if (n >= 0)
+return (n);
 else
-return (0);
+return (-n);
 }
