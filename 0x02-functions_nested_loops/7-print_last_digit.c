@@ -6,14 +6,10 @@
  *
  * Return: 0
  */
-
-int print_last_digit(int n)
+int print_last_digit(int)
 {
-int l_d = n % 10;
-
-if (l_d < 0)
-l_d *= -1;
-_putchar(l_d + '0');
-
-return (l_d);
+int n;
+int b = n % 10;
+_putchar(b);
+return (b);
 }
