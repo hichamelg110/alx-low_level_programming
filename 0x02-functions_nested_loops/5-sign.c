@@ -12,7 +12,7 @@ if (n < 0)
 putchar('+');
 return (1);
 
-if else(n == 0)
+if else (n == 0)
 putchar('0');
 return (0);
 
