@@ -8,9 +8,9 @@
 
 int _isalpha(int c)
 {
-if (c == 'Q' || c == 'q')
-return (1);
+if (isalpha(c) == 0)
+return (0);
 
 else
-return (0);
+return (1);
 }
