@@ -1,5 +1,4 @@
 #include "main.h"
-#include <ctype.h>
 
 /**
  * mul - a function that multiplies two integers.
@@ -11,10 +10,6 @@
 int mul(int a, int b)
 {
 int c = a * b;
-if (isdigit(a) && isdigit(b))
-
-putchar(a * b);
 
 return (c);
 }
-
