@@ -6,7 +6,7 @@
  * and for the multiples of five prints Buzz
  * Return: 0
  */
- 
+
 int main(void)
 {
 int i;
