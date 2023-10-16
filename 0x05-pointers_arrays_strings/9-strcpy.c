@@ -16,14 +16,12 @@ int c = 0;
 for (; *(src + a) != '\0'; a++)
 {
 }
-
 for ( ; c < a ; c++)
 {
 dest[c] = src[c];
 }
-    
 dest[a] = '\0';
-    
+
 return (dest);
 }
 
