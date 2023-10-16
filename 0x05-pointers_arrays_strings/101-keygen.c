@@ -13,14 +13,14 @@ int main(void)
 int x[100];
 int i, a, n;
 
-a = 0;    
+a = 0;
 srand(time(NULL));
 
 for (i = 0; i < 100; i++)
 {
 x[i] = rand() % 78;
 a += (x[i] + '0');
-if ((2772 - a) - '0' < 78)
+if ((2772 - a)-'0' < 78)
 {
 n = 2772 - a - '0';
 a += n;
