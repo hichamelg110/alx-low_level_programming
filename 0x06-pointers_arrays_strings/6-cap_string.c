@@ -8,38 +8,27 @@
 
 char *cap_string(char *str)
 {
-int capitalize = 1;
 
-for (int index = 0; str[index]; index++)
+for (int i = 0; str[i]; i++)
 {
-if ((str[index] >= 'a' && str[index] <= 'z') && capitalize)
-{
-str[index] -= 32;
-capitalize = 0;
-}
-else
-{
-capitalize = 0;
+while (!(str[i] >= 'a' && str[i] <= 'z') && str[i])
+i++;
 
-switch (str[index])
-{
-case ' ':
-case '\t':
-case '\n':
-case ',':
-case ';':
-case '.':
-case '!':
-case '?':
-case '"':
-case '(':
-case ')':
-case '{':
-case '}':
-capitalize = 1;
-}
-}
-}
+if (str[i - 1] == ' ' ||
+str[i - 1] == '\t' ||
+str[i - 1] == '\n' ||
+str[i - 1] == ',' ||
+str[i - 1] == ';' ||
+str[i - 1] == '.' ||
+str[i - 1] == '!' ||
+str[i - 1] == '?' ||
+str[i - 1] == '"' ||
+str[i - 1] == '(' ||
+str[i - 1] == ')' ||
+str[i - 1] == '{' ||
+str[i - 1] == '}' ||
+i == 0)
+str[i] -= 32;
 
 return (str);
 }
