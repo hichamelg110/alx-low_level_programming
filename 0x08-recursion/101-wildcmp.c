@@ -3,7 +3,7 @@
  * wildcmp - a function that compares two strings
  * @s1: first string
  * @s2: second string
- * Return: 
+ * Return: 0
  */
 
 int wildcmp(char *s1, char *s2)
