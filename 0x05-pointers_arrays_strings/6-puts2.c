@@ -13,9 +13,8 @@ for (i = 0; str[i] != '\0'; i++)
 {
 putchar(str[i]);
 if (i % 2 != 0)
-{
 continue;
 }
-putchar('\n');
 }
+putchar('\n');
 }
