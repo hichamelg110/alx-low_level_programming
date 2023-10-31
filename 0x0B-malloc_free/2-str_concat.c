@@ -18,8 +18,10 @@ if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
-for (c = 0; s1[c] != '\0'; c++);
-for (m = 0; s2[m] != '\0'; m++);
+for (c = 0; s1[c] != '\0'; c++)
+;
+for (m = 0; s2[m] != '\0'; m++)
+;
 concatenates = malloc(sizeof(char) * (c + m + 1));
 if (concatenates == NULL)
 return (NULL);
