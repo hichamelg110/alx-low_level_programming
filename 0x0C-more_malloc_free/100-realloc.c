@@ -8,28 +8,32 @@
 * Return: pointer to the newly allocated memory, or NULL
 */
 
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size) {
-if (new_size == old_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+unsigned int i, n;
+char *p;
+char *c = ptr;
+
+if (ptr == NULL)
+{
+p = malloc(new_size);
 return (p);
 }
+else if (new_size == 0)
+{
+free(ptr);
+return (NULL);
+}
+else if (new_size == old_size)
+return (ptr);
+ p = malloc(new_size);
 if (p == NULL)
-{
-return malloc(new_size);
-}
-if (new_size == 0)
-{
-free(p);
 return (NULL);
-}
-void *new_ptr = malloc(new_size);
-if (new_ptr == NULL)
-{
-return (NULL);
-}
-size_t copy_size = (new_size < old_size) ? new_size : old_size;
-memcpy(new_ptr, ptr, copy_size);
-free(p);
-
-return (new_ptr);
+if (new_size > old_size)
+n = old_size;
+for (i = 0; i < n; i++)
+p[i] = c[i];
+free(ptr);
+   
+return (p);
 }
