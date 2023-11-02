@@ -9,24 +9,27 @@
 */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size) {
-char *p;
-unsigned int i;
-
-if (new_size == old_size) {
-return (ptr);
-}
-if (new_size == 0) {
-free(ptr);
-return (NULL);
-}
-p = malloc(new_size);
-if (p == NULL) {
-return (NULL);
-}
-for (i = 0; i < old_size; i++) {
-p[i] = ((char *)ptr)[i];
-}
-free(ptr);
-
+if (new_size == old_size)
+{
 return (p);
+}
+if (p == NULL)
+{
+return malloc(new_size);
+}
+if (new_size == 0)
+{
+free(p);
+return (NULL);
+}
+void *new_ptr = malloc(new_size);
+if (new_ptr == NULL)
+{
+return (NULL);
+}
+size_t copy_size = (new_size < old_size) ? new_size : old_size;
+memcpy(new_ptr, ptr, copy_size);
+free(p);
+
+return (new_ptr);
 }
