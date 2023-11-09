@@ -9,7 +9,7 @@
 void print_all(const char * const format, ...)
 {
 int i = 0, c;
-char c;
+char m;
 float f;
 char *str;
 
@@ -25,8 +25,8 @@ c = va_arg(vargs, int);
 printf("%c", c);
 break;
 case 'i':
-c = va_arg(vargs, int);
-printf("%d", c);
+m = va_arg(vargs, int);
+printf("%d", m);
 break;
 case 'f':
 f = va_arg(vargs, double);
