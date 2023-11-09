@@ -21,7 +21,7 @@ va_start (sumptr, n);
 for(i = 0; i < n; i++)
 sum += va_arg(sumptr, int);
 
-va_end(sum);
+va_end(sumptr);
 
-return(sumptr);
+return(sum);
 }
