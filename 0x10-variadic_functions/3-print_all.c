@@ -8,15 +8,21 @@
 
 void print_all(const char * const format, ...)
 {
-int i = 0, c;
-char m;
+int i = 0;
+char c;
+int m;
 float f;
 char *str;
 
 va_list vargs;
 va_start(vargs, format);
 
-while (format && format[i])
+if (format == NULL)
+{
+printf("\n");
+return;
+}
+while (format[i])
 {
 switch (format[i])
 {
