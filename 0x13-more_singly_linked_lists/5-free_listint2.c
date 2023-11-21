@@ -13,7 +13,7 @@ return;
 
 while (*head != NULL)
 {
-emp = (*head)->next;
+tmp = (*head)->next;
 free(*head);
 *head = tmp;
 }
