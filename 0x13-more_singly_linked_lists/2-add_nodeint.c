@@ -1,17 +1,22 @@
 #include "lists.h"
 /**
- * free_listint - a function that frees a listint_t list.
- * @head: pointer to the first node
+ * add_nodeint - a function that adds a new node at the
+ * beginning of a listint_t list.
+ * @head: double pointer to the first node
+ * @n: data to be added to the new node
+ * Return: pointer to the new node, or NULL if it fails
  */
 
-void free_listint(listint_t *head)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-listint_t *tmp;
+listint_t *c;
+c = malloc(sizeof(listint_t));
+if (c == NULL)
+return (NULL);
 
-while (head)
-{
-tmp = head->next;
-free(head);
-head = tmp;
-}
+c->n = n;
+c->next = *head;
+*head = c;
+
+return (c);
 }
