@@ -3,6 +3,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * struct listint_s - singly linked list
+ * @n:  integer that holds data of node
+ * @next: pointer to the next node in the list
+ *
+ */
 
 typedef struct listint_s
 {
@@ -17,4 +23,3 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
 #endif
-
