@@ -8,25 +8,23 @@
  * there is one or more chars in the string b that is not 0 or 1
  * - b is NULL
  */
+#include <stdio.h>
 
 unsigned int binary_to_uint(const char *b)
 {
-int m;
-unsigned int c;
+unsigned int c = 0;
 
-c = 0;
-if (b == NULL)
+if (!b)
 return (0);
-for (m = 0; b[m] != '\0'; m++)
+while (*b)
 {
-if (b[m] != '0' && b[m] != '1')
+if (*b != '0' && *b != '1')
 return (0);
-}
-for (m = 0; b[m] != '\0'; m++)
-{
+
 c <<= 1;
-if (b[m] == '1')
-c += 1;
+if (*b == '1')
+c |= 1;
+b++;
 }
 
 return (c);
