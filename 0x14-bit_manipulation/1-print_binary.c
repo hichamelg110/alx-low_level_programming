@@ -17,17 +17,17 @@ while (bit_check > 0)
 if ((n & bit_check) == 0)
 {
 if (c != 0)
-putchar('0');
+_putchar('0');
 }
 else
 {
-putchar('1');
+_putchar('1');
 c = 1;
 }
 bit_check = bit_check >> 1;
 }
 if (c == 0)
 
-putchar('0');
+_putchar('0');
 }
 
