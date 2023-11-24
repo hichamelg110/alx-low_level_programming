@@ -6,8 +6,8 @@
  * - there is one or more chars in the string b that is not 0 or 1
  * - b is NULL
  */
- 
- int get_bit(unsigned long int n, unsigned int index)
+
+int get_bit(unsigned long int n, unsigned int index)
 {
 unsigned long int bit_check;
 
