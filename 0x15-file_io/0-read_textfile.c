@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include "main.h"
+#include <stdblib.h> 
 /**
  * read_textfile - Read text file and print to STDOUT.
  * @filename: Pointer to the name of the file
