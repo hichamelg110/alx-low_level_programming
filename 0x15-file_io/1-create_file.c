@@ -1,8 +1,11 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/stat.h>
+#include "main.h"
+/**
+ * create_file - a function that creates a file.
+ * @filename: a pointer to a string that contains the name of the file
+ * @text_content: a pointer to a string that contains the text to write
+ *
+ * Return: -1 If the function fails, otherwise return 1.
+ */
 
 int create_file(const char *filename, char *text_content) {
 if (filename == NULL)
