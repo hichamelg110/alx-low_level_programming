@@ -4,9 +4,10 @@
  * @filename: a pointer to a string that contains the name of the file
  * @text_content: a pointer to a string that contains the text to write
  *
- * Return: -1 If the function fails 
+ * Return: -1 If the function fails
  * Otherwise return 1.
  */
+
 
 int create_file(const char *filename, char *text_content)
 {
@@ -20,12 +21,15 @@ if (fd == -1)
 {
 return (-1);
 }
-
 if (text_content != NULL)
 {
-write(fd, text_content, strlen(text_content));
+ssize_t bw = write(fd, text_content, strlen(text_content));
+if (bw== -1)
+{
+close(fd);
+return (-1);
 }
-
+}
 close(fd);
 
 return (1);
