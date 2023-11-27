@@ -9,29 +9,20 @@
 
 int create_file(const char *filename, char *text_content)
 {
-if (filename == NULL)
-{
-return (-1);
-}
+int m = 0, w, fd;
 
-int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
-if (fd == -1)
-{
+if (filename == NULL)
 return (-1);
-}
 if (text_content != NULL)
-{
-ssize_t c = write(fd, text_content, strlen(text_content));
-if (c == -1 || c != strlen(text_content))
-{
+for (m = 0; text_content[m];)
+m++;
+}
+fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+w = write(fd, text_content, m);
+if (fd == -1 || w == -1)
+return (-1);
 close(fd);
-return (-1);
-}
-}
-if (close(fd) == -1)
-{
-return (-1);
-}
 
 return (1);
 }
+
