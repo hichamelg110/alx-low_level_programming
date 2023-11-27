@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdblib.h>
 /**
  * read_textfile - Read text file and print to STDOUT.
  * @filename: Pointer to the name of the file
@@ -9,19 +8,30 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-char *buffer;
-ssize_t fd;
-ssize_t write_b;
-ssize_t read_b;
+if (filename == NULL)
+return 0;
 
-fd = open(filename, O_RDONLY);
+int fd = open(filename, O_RDONLY);
 if (fd == -1)
 return (0);
-buffer = malloc(sizeof(char) * letters);
-read_b = read(fd, buffer, letters);
-write_b = write(STDOUT_FILENO, buffer, read_b);
+char *buffer = malloc(sizeof(char) * (letters + 1));
+if (buffer == NULL)
+{
+close(fd);
+return (0);
+}
+ssize_t c = read(fd, buffer, letters);
+if (c == -1)
+{
+free(buffer);
+close(fd);
+return (0);
+}
+buffer[c] = '\0';
+ssize_t m = write(STDOUT_FILENO, buffer, c);
 
 free(buffer);
 close(fd);
-return (write_b);
+
+return (m == -1 ? 0 : m);
 }
