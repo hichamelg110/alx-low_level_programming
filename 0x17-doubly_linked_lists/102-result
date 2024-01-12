@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-max_p = 0
 
-for a in range(100, 1000):
-    for b in range(100, 1000):
-        p = a * b
-        if str(p) == str(p)[::-1] and p > max_p:
-            max_p = p
+largest_palindrome = 0
 
-with open("102-result", "w") as f:
-    f.write(str(max_p))
+for i in range(100, 1000):
+    for j in range(100, 1000):
+        product = i * j
+        if str(product) == str(product)[::-1] and product > largest_palindrome:
+            largest_palindrome = product
 
+with open("102-result", "w") as file:
+    file.write(str(largest_palindrome))
