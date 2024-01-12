@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-def is_p(n):
-    return str(n) == str(n)[::-1]
+max_p = 0
 
-def max_p():
-    max_p = 0
-    for a in range(999, 99, -1):
-        for b in range(a, 99, -1):
-            prod = a * b
-            if is_p(prod) and prod > max_p:
-                max_p = prod
-    return max_p
-print(max_p())
+for a in range(100, 1000):
+    for b in range(100, 1000):
+        p = a * b
+        if str(p) == str(p)[::-1] and p > max_p:
+            max_p = p
+
+with open("102-result", "w") as f:
+    f.write(str(max_p))
+
